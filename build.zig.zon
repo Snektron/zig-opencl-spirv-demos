@@ -1,0 +1,11 @@
+.{
+    .name = "zig-opencl-spirv-demos",
+    .version = "0.1.0",
+    .dependencies = .{
+        .opencl = .{
+            .url = "https://github.com/Snektron/opencl-zig/archive/edde6cc92611ca526ce652d81b1688cb03c084bb.tar.gz",
+            .hash = "1220ce2b60d775b2913b3fbcf5e912e9b971acbdc1771fc25e106bd1dbf2835db461",
+        },
+    },
+    .paths = .{""},
+}
