@@ -25,7 +25,7 @@ pub fn main() !void {
 
     std.log.debug("generating inputs...", .{});
 
-    const size = 128 * 1024 * 1024;
+    const size = 256 * 1024 * 1024;
 
     const y, const x = blk: {
         const y = try allocator.alloc(f32, size);
