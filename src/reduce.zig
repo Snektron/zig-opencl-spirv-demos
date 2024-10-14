@@ -38,6 +38,8 @@ pub fn main() !void {
 
     var d_input = try cl.createBufferWithData(f32, context, .{ .read_write = true }, input);
     var d_output = try cl.createBuffer(f32, context, .{ .read_write = true }, input.len);
+    defer d_input.release();
+    defer d_output.release();
 
     var maybe_event: ?cl.Event = null;
     var first_event: ?cl.Event = null;
@@ -88,7 +90,7 @@ pub fn main() !void {
         const stop = try last_event.commandEndTime();
         const runtime = stop - start;
         const tput = input.len * @sizeOf(f32) * std.time.ns_per_s / runtime;
-        std.log.info("reduction took {d} us, {}/s", .{runtime / std.time.ns_per_us, std.fmt.fmtIntSizeBin(tput)});
+        std.log.info("reduction took {d:.2} us, {:.2}/s", .{runtime / std.time.ns_per_us, std.fmt.fmtIntSizeBin(tput)});
     }
 
     // input.len * random in [0, 1) yields an average of input.len * 0.5

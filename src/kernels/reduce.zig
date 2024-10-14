@@ -46,13 +46,13 @@ fn reduce(
     comptime var i: usize = 1;
     inline while (i < block_dim) : (i <<= 1) {
         if (tid % (i * 2) == 0) {
-            shared[tid] += shared[tid + i];
+            shared[tid] += (&shared)[tid + i];
         }
         syncThreads();
     }
 
     if (tid == 0) {
-        output[bid] = shared[0];
+        output[bid] = (&shared)[0];
     }
 }
 
@@ -61,6 +61,6 @@ comptime {
     // so that if we @import this file from host it doesn't
     // try to reference the kernel.
     if (builtin.os.tag == .opencl) {
-        @export(reduce, .{ .name = "reduce" });
+        @export(&reduce, .{ .name = "reduce" });
     }
 }

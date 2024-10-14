@@ -73,7 +73,7 @@ pub fn main() !void {
     const stop = try saxpy_complete.commandEndTime();
     const runtime = stop - start;
     const tput = size * @sizeOf(f32) * std.time.ns_per_s / runtime;
-    std.log.info("kernel took {d} us, {:2}/s", .{runtime / std.time.ns_per_us, std.fmt.fmtIntSizeBin(tput)});
+    std.log.info("kernel took {d:.2} us, {:.2}/s", .{runtime / std.time.ns_per_us, std.fmt.fmtIntSizeBin(tput)});
 
     std.log.debug("checking results...", .{});
 
