@@ -82,17 +82,15 @@ pub fn build(b: *std.Build) void {
     const device_target = b.resolveTargetQuery(.{
         .cpu_arch = .spirv64,
         .os_tag = .opencl,
-        // TODO: SPIR-V needs to get its own ABI, or allow none here.
-        // Due to an internal change in the Zig compiler we currently cant
-        // set .none here, so we set a dummy ABI.
-        .abi = .gnu,
+        .abi = .none,
         .cpu_features_add = std.Target.spirv.featureSet(&.{
-            .Int64,
-            .Int16,
-            .Int8,
-            .Float64,
-            .Float16,
-            .Vector16,
+            .int64,
+            .int16,
+            .int8,
+            .float64,
+            .float16,
+            .vector16,
+            .generic_pointer,
         }),
     });
 

@@ -4,7 +4,7 @@ const Allocator = std.mem.Allocator;
 const cl = @import("opencl");
 
 // Downstream demos should import this
-pub const std_options = .{
+pub const std_options: std.Options = .{
     .log_level = .debug,
     .logFn = log,
 };
