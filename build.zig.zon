@@ -1,5 +1,6 @@
 .{
-    .name = "zig-opencl-spirv-demos",
+    .fingerprint = 0x9bb7658ad38db736,
+    .name = .zig_opencl_spirv_demos,
     .version = "0.1.0",
     .dependencies = .{
         .opencl = .{
