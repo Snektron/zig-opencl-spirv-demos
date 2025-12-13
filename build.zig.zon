@@ -2,11 +2,11 @@
     .fingerprint = 0x9bb7658ad38db736,
     .name = .zig_opencl_spirv_demos,
     .version = "0.1.0",
-    .minimum_zig_version = "0.15.0-dev.1160+e43617e68",
+    .minimum_zig_version = "0.15.2",
     .dependencies = .{
         .opencl = .{
-            .url = "https://github.com/Snektron/opencl-zig/archive/86e1eb15c60b85c9d57bd71ff9fa62d4006a85e5.tar.gz",
-            .hash = "opencl-0.1.0-W4Df3cmSAAA77y0UNCWbx_0BGB62alV4-QIhoX1JGZ_z",
+            .url = "git+https://github.com/Snektron/opencl-zig.git#05535768732a11bca50234ae436107e8ba9f72ba",
+            .hash = "opencl-0.1.0-W4Df3T2pNADIuy4qaFJPneWCDecwqOZJRmM1Zflxj16I",
         },
     },
     .paths = .{""},

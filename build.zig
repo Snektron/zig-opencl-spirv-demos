@@ -113,7 +113,7 @@ pub fn build(b: *std.Build) void {
         db.addKernel("saxpy-kernel", "src/kernels/saxpy.zig"),
     });
 
-    db.addDemo("reduce", "src/reduce.zig", &.{
-        db.addKernel("reduce-kernel", "src/kernels/reduce.zig"),
-    });
+    // db.addDemo("reduce", "src/reduce.zig", &.{
+    //     db.addKernel("reduce-kernel", "src/kernels/reduce.zig"),
+    // });
 }
